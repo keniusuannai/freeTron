@@ -1,0 +1,244 @@
+/* CSS reset */
+html {
+    color: #000;
+    background: #e1e1e1;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+input, select, img {
+    vertical-align: middle
+}
+
+input, select {
+    outline: none
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+audio, canvas, video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+body, button, input, select, textarea {
+    font: 12px/1.5 tahoma, arial, 宋体, sans-serif
+}
+
+input, select, textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th {
+    text-align: inherit;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+iframe {
+    display: block;
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+address, caption, cite, code, dfn, em, th, var {
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ins, a {
+    text-decoration: none;
+}
+
+/*Correct block display not defined in IE6/7/8/9 & ff3,IE需要在js中createElement(tag)*/
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+    display: block;
+}
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/* global */
+body {
+    background: #e1e1e1;
+}
+
+.wrapper {
+    margin: 0 auto;
+    text-align: left;
+    width: 980px;
+}
+
+td {
+    font-size: 12px;
+    line-height: 160%;
+}
+
+.txthide {
+    text-indent: -999em;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 0
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    zoom: 1; /* for IE6 IE7 */
+}
+
+.hidden {
+    display: none;
+}
+
+.left, .right {
+    display: inline;
+    zoom: 1;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}
+
+.mt30 {
+    margin-top: 30px !important;
+}
+
+.sc1 {
+    color: #c42929 !important
+}
+
+.sc2 {
+    color: #0042ff !important
+}
+
+a:active, a:focus, input {
+    -moz-outline: none;
+    outline: none;
+    ie-dummy: expression(this.hideFocus=true);
+}
+/*=================正文===================*/
+/*头部导航*/
+.mod-nav {
+    height: 88px;
+    background-color: #3f3a39;
+}
+.mod-nav .m-nav{
+    width: 1000px;
+    margin: 0 auto;
+}
+.mod-nav .m-nav .logo{
+    float: left;
+    width: 199px;
+    height: 43px;
+    margin:24px 0 0 22px;
+}
+.mod-nav .nav-list{
+    float: right;
+}
+.mod-nav .nav-list li{
+    float: left;
+}
+.mod-nav .nav-list .nav-item{
+    display: block;
+    width: 91px;
+    height: 88px;
+    color: #a6a6a6;
+    border:1px solid #3f3a39;
+    border-top: 0;
+    border-bottom: 0;
+    text-align: center;
+    font:16px/80px "ROBOTO,Micrsoft YaHei";
+}
+.mod-nav .nav-list .cur .nav-item,.mod-nav .nav-list .nav-item:hover{
+    background-color: #2e2e2e;
+    border-color: #262525;
+    color: #ffffff;
+    text-decoration: none;
+}
