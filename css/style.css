@@ -30,7 +30,7 @@ audio, canvas, video {
 }
 
 body, button, input, select, textarea {
-    font: 12px/1.5 tahoma, arial, ËÎÌå, sans-serif
+    font: 12px/1.5 tahoma, arial, ï¿½ï¿½ï¿½ï¿½, sans-serif
 }
 
 input, select, textarea {
@@ -68,7 +68,7 @@ address, caption, cite, code, dfn, em, th, var {
     font-weight: 500;
 }
 
-/* ie6 7 8(q) bug ÏÔÊ¾ÎªÐÐÄÚ±íÏÖ */
+/* ie6 7 8(q) bug ï¿½ï¿½Ê¾Îªï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½ */
 iframe {
     display: block;
 }
@@ -113,12 +113,12 @@ ins, a {
     text-decoration: none;
 }
 
-/*Correct block display not defined in IE6/7/8/9 & ff3,IEÐèÒªÔÚjsÖÐcreateElement(tag)*/
+/*Correct block display not defined in IE6/7/8/9 & ff3,IEï¿½ï¿½Òªï¿½ï¿½jsï¿½ï¿½createElement(tag)*/
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
     display: block;
 }
 
-/* HTML5 Ã½ÌåÎÄ¼þ¸ú img ±£³ÖÒ»ÖÂ */
+/* HTML5 Ã½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ img ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ */
 audio, canvas, video {
     display: inline-block;
     *display: inline;
@@ -133,7 +133,7 @@ body {
 .wrapper {
     margin: 0 auto;
     text-align: left;
-    width: 980px;
+    width: 1170px;
 }
 
 td {
@@ -203,9 +203,10 @@ a:active, a:focus, input {
     outline: none;
     ie-dummy: expression(this.hideFocus=true);
 }
-/*=================ÕýÎÄ===================*/
-/*Í·²¿µ¼º½*/
+/*=================ï¿½ï¿½ï¿½ï¿½===================*/
+/*Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .mod-nav {
+    width: 100%;
     height: 88px;
     background-color: #3f3a39;
 }
@@ -215,15 +216,18 @@ a:active, a:focus, input {
 }
 .mod-nav .m-nav .logo{
     float: left;
+    *display: inline;
     width: 199px;
     height: 43px;
     margin:24px 0 0 22px;
 }
 .mod-nav .nav-list{
     float: right;
+    *display: inline;
 }
 .mod-nav .nav-list li{
     float: left;
+    *display: inline;
 }
 .mod-nav .nav-list .nav-item{
     display: block;
