@@ -203,6 +203,9 @@ a:active, a:focus, input {
     outline: none;
     ie-dummy: expression(this.hideFocus=true);
 }
+.fw{
+    font-weight: 700;
+}
 /*=================主体===================*/
 /*顶部导航栏*/
 .mod-nav {
@@ -245,4 +248,47 @@ a:active, a:focus, input {
     border-color: #262525;
     color: #ffffff;
     text-decoration: none;
+}
+
+/*banner模块*/
+.mod-banner{
+    width: 100%;
+    min-width: 1000px;
+    height: 307px;
+    background: url(../images/banner1.jpg) no-repeat center top;
+    overflow: hidden;
+}
+.m-banner{
+    width: 940px;
+    margin: 0 auto;
+    padding: 140px 0 0 60px;
+}
+.m-banner .tit{
+    font:400 35px/50px "simsun";
+    color: #fff;
+}
+.m-banner .sprite{
+    width: 585px;
+    height: 1px;
+    margin-left: -10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.mod-window .tit{
+    color: #0088d3;
+    font:32px/40px "Roboto";
+
+}
+.mod-window .tit:before{
+    content: '';
+    width: 56px;
+    height: 3px;
+    background-color: #00b4fa;
+    display: block;
+}
+.mod-window .txt{
+    color: #000;
+    font:18px/28px "Microsoft YaHei";
+    text-indent: 35px;
 }
