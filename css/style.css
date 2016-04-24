@@ -30,7 +30,7 @@ audio, canvas, video {
 }
 
 body, button, input, select, textarea {
-    font: 12px/1.5 tahoma, arial, 锟斤拷锟斤拷, sans-serif
+    font: 12px/1.5 tahoma, arial, sans-serif
 }
 
 input, select, textarea {
@@ -81,11 +81,6 @@ caption, th {
     text-align: left;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-size: 100%;
-    font-weight: 500;
-}
-
 q:before, q:after {
     content: '';
 }
@@ -130,7 +125,7 @@ body {
     background: #e1e1e1;
 }
 
-.wrapper {
+.wrap {
     margin: 0 auto;
     text-align: left;
     width: 1170px;
@@ -206,9 +201,12 @@ a:active, a:focus, input {
 /*=================主体===================*/
 /*顶部导航栏*/
 .mod-nav {
+    position: fixed;
+    z-index: 10;
     width: 100%;
     height: 88px;
     background-color: #3f3a39;
+    box-shadow: 0 2px 3px rgba(4,0,0,0.75);
 }
 .mod-nav .m-nav{
     width: 1000px;
@@ -245,4 +243,301 @@ a:active, a:focus, input {
     border-color: #262525;
     color: #ffffff;
     text-decoration: none;
+}
+/*轮播*/
+.mod-banner{
+    padding-top: 88px;
+    height: 823px;
+    position: relative;
+    overflow: hidden;
+}
+.mod-banner li{
+    float: left;
+    *display: inline;
+    position: relative;
+}
+.mod-banner .b-bg1,.mod-banner .b-bg2,.mod-banner .b-bg3{
+    width: 100%;
+    height: 100%;
+    background-size: cover !important;
+}
+.mod-banner .b-bg1{
+     background: url("../images/bg1.jpg") no-repeat center ;
+ }
+.mod-banner .b-bg2{
+    background: url("../images/bg2.jpg") no-repeat center 0;
+}
+.mod-banner .b-bg3{
+    background: url("../images/bg3.jpg") no-repeat center 0;
+}
+.mod-banner .b-content{
+    width:100%;
+    height: 823px;
+    overflow: hidden;
+    position: relative;
+}
+.mod-banner .b-bg1 h2,.mod-banner .b-bg1 h3{
+    font-size: 60px;
+    color: #ffffff;
+    font-family:"Myriad Pro";
+    text-align: center;
+    font-weight: 100;
+    font-style: italic;
+    padding-top: 360px;
+}
+.mod-banner .b-bg1 h3{
+    padding-top: 0;
+    line-height: 100px;
+}
+.mod-banner .b-bg1 .line{
+    width: 550px;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background-color: #ffffff;
+}
+.mod-banner .b-bg2 a{
+    display: block;
+    width: 712px;
+    height: 97px;
+    background: rgba(38,186,239,0.76);
+    top: 355px;
+    position: absolute;
+    left: 50%;
+    margin-left: -535px;
+}
+.mod-banner .b-bg2 h2{
+    text-align: center;
+    line-height: 97px;
+    font-size: 56px;
+    font-weight:100;
+    color: #ffffff;
+}
+.mod-banner .b-bg2 a:hover{
+    background-color: rgba(38,186,239,1);
+    text-decoration: none;
+}
+.mod-banner .b-bg3 h2,.mod-banner .b-bg3 h3{
+    font-size: 53px;
+    color: #ffffff;
+    font-family:"Myriad Pro";
+    text-align: center;
+    font-weight: 100;
+    font-style: italic;
+    padding-top: 422px;
+}
+.mod-banner .b-bg3 h3{
+    padding: 0;
+    font-size: 46px;
+    line-height: 90px;
+}
+.mod-banner .b-bg3 .line{
+    width: 734px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    display: block;
+}
+.mod-banner .read-more{
+    font-size: 18px;
+    display: block;
+    color: #ffffff;
+    font-family:"Myriad Pro";
+    width: 132px;
+    height: 43px;
+    line-height: 43px;
+    text-align: center;
+    border: 1px solid #ffffff;
+    position: absolute;
+    bottom: 154px;
+    left: 50%;
+    margin-left: -66px;
+}
+.mod-banner .read-more:hover{
+    background-color: #ffffff;
+    color: #333333;
+    text-decoration: none;
+}
+.mod-banner .control{
+    position: absolute;
+    bottom: 57px;
+    left: 50%;
+    margin-left: -56px;
+}
+.mod-banner .control li{
+    width: 22px;
+    height: 9px;
+    background-color: #3f3a39;
+    text-indent: -999px;
+    overflow: hidden;
+    margin-left: 13px;
+}
+.mod-banner .control li.current{
+    background-color: #008cd7;
+}
+/*内容*/
+.m-about{ background:url(../images/bx2_1.jpg) no-repeat center 0 #f3f3f3;}
+.m-about .wrap{ background:url(../images/bx2_2.jpg) no-repeat center 0;
+    height: 682px;
+    padding-top: 171px;
+}
+.m-connect{
+    background:url(../images/bx3.jpg) repeat 0 #0999e6;
+}
+.m-connect .wrap{
+    height: 696px;
+    padding-top: 140px;
+}
+.m-window{ background:url(../images/bx4_1.jpg) no-repeat center 0 #d7d8da;}
+.m-window .wrap{ background:url(../images/bx4_2.jpg) no-repeat center 0;
+    height: 730px;
+    padding-top: 92px;
+}
+.mod-box .title{
+    width: 291px;
+    height: 72px;
+    border: 1px solid #040000;
+    line-height: 72px;
+    text-align: center;
+    font-size: 36px;
+    font-family:"Myriad Pro";
+    color: #333;
+    display: block;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0);
+}
+.mod-box .title:hover{
+    background-color: rgba(51,51,51,1);
+    color: #ffffff;
+    text-decoration: none;
+}
+.m-about .bd-txt {
+    padding: 0 70px;
+    margin-top: 170px;
+}
+.m-about .bd-txt  p{
+    font-family: 微软雅黑;
+    font-size: 24px;
+    text-indent: 48px;
+    line-height: 43px;
+}
+.m-connect .title{
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+.m-connect .title:hover{
+    background: #ffffff;
+    color: #333;
+    text-decoration: none;
+}
+.m-connect .bd{
+    margin-top: 80px;
+}
+.m-connect .bd li{
+    width: 33.3333%;
+    margin: 0 auto;
+    float: left;
+    position: relative;
+    padding: 20px 0 15px 0;
+}
+.m-connect li .b-item{
+    width: 141px;
+    height: 141px;
+    margin: 0 auto;
+}
+.m-connect li .b-item img{
+    width: 141px;
+    height: 141px;
+}
+.m-connect .b-txt{
+    width: 219px;
+    height: 206px;
+    overflow: hidden;
+    margin: 22px auto 25px auto;
+
+}
+.m-connect .b-txt h3{
+    font-size: 22px;
+    font-weight: 100;
+    font-family: "Myriad Pro";
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #ffffff;
+}
+.m-connect .b-txt p{
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 20px;
+    line-height: 29px;
+    font-family: 微软雅黑;
+}
+.m-connect li .read-more{
+    font-size: 15px;
+    font-family: "Myriad Pro";
+    text-align: center;
+    width: 103px;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    display: block;
+    margin: 0 auto;
+}
+.m-connect li .read-more:hover{
+    color: #333333;
+    background-color: #ffffff;
+    text-decoration: none;
+}
+.m-connect li:first-child:after,.m-connect li:nth-child(2):after{
+    content: '';
+    height: 465px;
+    width: 1px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #ffffff;
+}
+.m-window .bd{
+    margin-top: 95px;
+    position: relative;
+}
+.m-window .bd img{
+    width: 399px;
+    height: 373px;
+    display: block;
+    margin: 0 auto;
+}
+.m-window .b-txt{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    padding: 0 74px;
+}
+.m-window .m-gov,.m-window .m-ent{
+  position: absolute;
+}
+.m-window .m-ent{
+
+}
+.m-window .b-txt h3{
+    font-weight: 100;
+    font-size: 32px;
+    font-family: "Myriad Pro";
+    color: #0088d3;
+    text-align: right;
+}
+.m-window .b-txt p{
+    font-size: 18px;
+    font-family: 微软雅黑;
+    color: #0088d3;
+    margin: 79px 0 0 18px;
+    /*width: 275px;*/
+}
+.m-window .m-ent{
+    margin: 0 0 0 160px;
+}
+.m-window .m-ent h3{
+    text-align: left;
 }
