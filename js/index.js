@@ -1,5 +1,4 @@
 $(function(){
-    //�ֲ�
     var $window = $(document),window_width = $window.width();
     $('#j-banner, #j-banner li').width(window_width);
     new $.Tab({
@@ -28,48 +27,56 @@ $(".case-list,.m-about .bd-txt").hover(function(){
     }
 )
 
-    $(document).scroll(function(){
-        var $this_top=$(this).scrollTop();
-        console.log($this_top)
-        if($this_top>0&&$this_top<=400){
+/*定位*/
+    var pos0 = $(".m-about").offset().top;
+    var pos1 = $(".m-connect").offset().top;
+    var pos2 = $(".m-window").offset().top;
+    var pos3 = $(".m-team").offset().top;
+    var pos4 = $(".m-case").offset().top;
+    var pos5 = $(".m-partner").offset().top;
+    var pos6 = $(".m-contact").offset().top;
+    $(window).scroll(function(){
+        var $this_top=$(document).scrollTop()+$(this).height()/1.5;
+        if($this_top==$(this).height()/1.5){
             $(".nav-list li").eq(0).addClass('cur').siblings().removeClass('cur')
-        }else if($this_top>400&&$this_top<=1200){
+        }else if($this_top>pos0&&$this_top<=pos1){
             $(".nav-list li").eq(1).addClass('cur').siblings().removeClass('cur')
-        }else if($this_top>1200&&$this_top<=2000){
+        }else if($this_top>pos1&&$this_top<=pos2){
             $(".nav-list li").eq(2).addClass('cur').siblings().removeClass('cur')
-        }else if($this_top>2000&&$this_top<=2850){
+        }else if($this_top>pos2&&$this_top<=pos3){
             $(".nav-list li").eq(3).addClass('cur').siblings().removeClass('cur')
         }
-        else if($this_top>2850&&$this_top<=3700){
+        else if($this_top>pos3&&$this_top<=pos4){
             $(".nav-list li").eq(4).addClass('cur').siblings().removeClass('cur')
         }
-        else if($this_top>3700&&$this_top<=4500){
+        else if($this_top>pos4&&$this_top<=pos5){
             $(".nav-list li").eq(5).addClass('cur').siblings().removeClass('cur')
-        }else if($this_top>4500&&$this_top<=5000){
+        }else if($this_top>pos5&&$this_top<=pos6){
             $(".nav-list li").eq(6).addClass('cur').siblings().removeClass('cur');
-            if($this_top>=4450){
-                for(var i=0;i<4;i++){
+            if($this_top>=pos5){
+                for(var i=0;i<3;i++){
                     $(".m-partner li").eq(i).addClass("pt-page-moveFromLeftFade")
                 }
-                for(var i=5;i<9;i++){
+                for(var i=4;i<9;i++){
                     $(".m-partner li").eq(i).addClass("pt-page-moveFromRightFade")
                 }
             }
-        }else if($this_top>5000&&$this_top<=5464){
+        }else if($this_top>pos6){
             $(".nav-list li").eq(7).addClass('cur').siblings().removeClass('cur')
         }
 
-    })
+    });
 
-//定位
     function locate(item,div){
         $(item).bind("click",function(){
-            ot = $(div).offset().top;
+            ot = $(div).offset().top-88;
             if($.browser.webkit){
-                $("body").stop().animate({"scrollTop":ot},500);
+                $("body").stop().animate({scrollTop:ot},500);
+                console.log(ot)
             }
             else{
-                $(document.documentElement || document.body).stop().animate({"scrollTop":ot},500);
+                $("html,body").stop().animate({scrollTop:ot},500);
+                console.log(ot)
             }
         });
     }
@@ -81,7 +88,4 @@ $(".case-list,.m-about .bd-txt").hover(function(){
     locate("#j-step6",".m-case");
     locate("#j-step7",".m-partner");
     locate("#j-step8",".m-contact");
-
-
-
 });
