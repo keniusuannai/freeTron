@@ -585,9 +585,23 @@ a:active, a:focus, input {
     margin-top: 90px;
     padding: 0 68px;
 }
-.m-team .bd li{
+.m-team .control li{
     float: left;
     *display: inline;
+
+}
+.m-team .team-list{
+    position: relative;
+    width: 100%;
+    height: 410px;
+}
+.m-team .team-list li{
+    position: absolute;
+    top:0;
+    left: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
 }
 .m-team .bd .figure{
     width: 162px;
@@ -669,6 +683,9 @@ a:active, a:focus, input {
     left: 0;
     width: 360px;
     height: 508px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
 }
 .m-case .list-info img{
     width: 361px;

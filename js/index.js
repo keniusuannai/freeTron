@@ -12,22 +12,23 @@ $(function(){
     });
 
     //tab切换
+    $('#team-list li').eq(0).css("opacity",1);
     $('#team-control li a').click(function () {
-        $('#team-list li').eq($(this).parent().index()).fadeIn(1500).siblings().hide();
+        $('#team-list li').eq($(this).parent().index()).animate({"opacity":1},1500).siblings().animate({"opacity":0},1000);
         $(this).parent().addClass('cur').siblings().removeClass('cur');
     });
 
 $(".case-list,.m-about .bd-txt").hover(function(){
-    $(this).find(".list-info").addClass("act").fadeIn(700);
+    $(this).find(".list-info").addClass("act").stop().animate({"opacity":1},700);
         $(this).find("a").addClass("act");
 },
     function(){
-        $(this).find(".list-info").removeClass("act").fadeOut(700);
+        $(this).find(".list-info").removeClass("act").stop().animate({"opacity":0},700);
         $(this).find("a").removeClass("act");
     }
 )
 
-    $(window).scroll(function(){
+    $(document).scroll(function(){
         var $this_top=$(this).scrollTop();
         console.log($this_top)
         if($this_top>0&&$this_top<=400){
@@ -46,7 +47,7 @@ $(".case-list,.m-about .bd-txt").hover(function(){
             $(".nav-list li").eq(5).addClass('cur').siblings().removeClass('cur')
         }else if($this_top>4500&&$this_top<=5000){
             $(".nav-list li").eq(6).addClass('cur').siblings().removeClass('cur');
-            if($this_top>=4700){
+            if($this_top>=4450){
                 for(var i=0;i<4;i++){
                     $(".m-partner li").eq(i).addClass("pt-page-moveFromLeftFade")
                 }
