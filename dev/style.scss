@@ -201,38 +201,80 @@ $designWidth : 1180;
   }
   .m-case .wrap {
     height: auto;
-    padding-top: px(98);
+    padding: px(98) 0 px(110) 0;
   }
   .m-case .bd {
     width: 100%;
     margin-top: px(114);
   }
   .m-case .bd ul {
-    padding: 0 px(160);
+    padding: 0 px(175);
   }
   .m-case .bd li {
     float: none;
-    width: px(728);
+    width: 100%;
     margin: 0 0 px(76) 0;
+    height: auto;
   }
   .m-case .list-info {
     background-color: #f6f6f6;
     position: absolute;
     top: 0;
     left: 0;
-    width: px(731);
-    height: px(1019);
+    width: 100%;
+    height: px(1119);
     opacity: 1;
   }
   .m-case .bd li .case-list {
     position: relative;
     display: block;
     background-image: none;
-    width: px(728);
-    height: px(1019);
+    width: 100%;
+    height: auto;
+    height: px(1119);
   }
   .m-case .list-info img {
-    width: px(728);
-    height: px(499);
+    width: 100%;
+    height: auto;
+  }
+  .m-case .lovoo .txt img {
+    width: px(392);
+    height: px(86);
+    margin: px(72) auto;
+  }
+  .m-case .wf .txt img{
+    height: px(122);
+    margin: px(70) auto;
+  }
+  .m-case .ask .txt img {
+    height: px(122);
+    margin: px(70) auto;
+  }
+  .m-case .txt p {
+    padding: 0 px(150);
+    font-size: px(30);
+    line-height: px(50);
+  }
+  .m-partner .bd li{
+    width: 33.333%;
+    margin: 0 0 px(30) 0;
+    height: px(110);
+  }
+  .m-partner .bd li a{
+    margin: 0 auto;
+  }
+  .m-partner .i-amaz {
+    width: px(254);
+    height: px(110);
+  }
+  .m-partner .i-baidu {
+    width: px(260);
+    height: px(86);
+  }
+  .m-partner .i-lovoo {
+    width: px(290);
+    height: px(64);
+    margin-top: px(22);
+
   }
 }
