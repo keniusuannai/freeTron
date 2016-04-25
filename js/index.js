@@ -6,7 +6,7 @@ $(function(){
         effect: 'slide3d',
         animateTime: 1000,
         stay: 3500,
-        autoPlay: true,
+        autoPlay: false,
         merge: true
     });
 
@@ -60,6 +60,7 @@ $(".case-list,.m-about .bd-txt").hover(function(){
                 for(var i=0;i<3;i++){
                     $(".m-partner li").eq(i).addClass("pt-page-moveFromLeftFade")
                 }
+                $(".m-partner li").eq(3).addClass("pt-page-fadeIn");
                 for(var i=4;i<9;i++){
                     $(".m-partner li").eq(i).addClass("pt-page-moveFromRightFade")
                 }

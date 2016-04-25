@@ -800,9 +800,18 @@ a:active, a:focus, input {
     -webkit-animation: moveFromRightFade 2s ease both;
     animation: moveFromRightFade 2s ease both;
 }
+.pt-page-fadeIn{
+    -webkit-animation: fadeIn 2s ease both;
+    animation: fadeIn 2s ease both;
+}
 @-webkit-keyframes moveFromLeftFade {
     from { opacity: 0; -webkit-transform: translateX(-100%); }
 }
 @-webkit-keyframes moveFromRightFade {
     from { opacity: 0; -webkit-transform: translateX(100%); }
 }
+@-webkit-keyframes fadeIn {
+    from { opacity: 0;}
+    to{ opacity: 1;}
+}
+
