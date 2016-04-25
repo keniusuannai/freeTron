@@ -616,6 +616,10 @@ a:active, a:focus, input {
     font-family: 微软雅黑;
     line-height: 32px;
 }
+.m-team .bd .info-txt p{
+    height: 96px;
+    overflow: hidden;
+}
 .m-team .bd .info-txt h3{
     font-size: 24px;
     text-align: center;
