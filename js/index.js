@@ -17,6 +17,7 @@ $(function(){
         $(this).parent().addClass('cur').siblings().removeClass('cur');
     });
 
+    /*动画*/
 $(".case-list,.m-about .bd-txt").hover(function(){
     $(this).find(".list-info").addClass("act").stop().animate({"opacity":1},700);
         $(this).find("a").addClass("act");
@@ -25,7 +26,9 @@ $(".case-list,.m-about .bd-txt").hover(function(){
         $(this).find(".list-info").removeClass("act").stop().animate({"opacity":0},700);
         $(this).find("a").removeClass("act");
     }
-)
+);
+    var _index=$("#j-banner .control li.current").index();
+    $("#banner-list li").eq(_index).addClass("animate").siblings().removeClass("animate");
 
 /*定位*/
     var pos0 = $(".m-about").offset().top;
@@ -67,6 +70,15 @@ $(".case-list,.m-about .bd-txt").hover(function(){
 
     });
 
+    locate("#j-step1","#j-banner");
+    locate("#j-step2",".m-about");
+    locate("#j-step3",".m-connect");
+    locate("#j-step4",".m-window");
+    locate("#j-step5",".m-team");
+    locate("#j-step6",".m-case");
+    locate("#j-step7",".m-partner");
+    locate("#j-step8",".m-contact");
+
     function locate(item,div){
         $(item).bind("click",function(){
             ot = $(div).offset().top-88;
@@ -80,12 +92,4 @@ $(".case-list,.m-about .bd-txt").hover(function(){
             }
         });
     }
-    locate("#j-step1","#j-banner");
-    locate("#j-step2",".m-about");
-    locate("#j-step3",".m-connect");
-    locate("#j-step4",".m-window");
-    locate("#j-step5",".m-team");
-    locate("#j-step6",".m-case");
-    locate("#j-step7",".m-partner");
-    locate("#j-step8",".m-contact");
 });
