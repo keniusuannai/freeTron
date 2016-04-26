@@ -165,37 +165,17 @@ td {
     display: none;
 }
 
-.left, .right {
+.fl, .fr {
     display: inline;
     zoom: 1;
 }
 
-.left {
+.fl {
     float: left;
 }
 
-.right {
+.fr {
     float: right;
-}
-
-.mt10 {
-    margin-top: 10px !important;
-}
-
-.mt20 {
-    margin-top: 20px !important;
-}
-
-.mt30 {
-    margin-top: 30px !important;
-}
-
-.sc1 {
-    color: #c42929 !important
-}
-
-.sc2 {
-    color: #0042ff !important
 }
 
 a:active, a:focus, input {
@@ -255,7 +235,7 @@ a:active, a:focus, input {
     width: 100%;
     min-width: 1000px;
     height: 307px;
-    background: url(../images/banner1.jpg) no-repeat center top;
+    background: url(../images/ins_banner.jpg) no-repeat center top;
     overflow: hidden;
 }
 .m-banner{
@@ -274,10 +254,30 @@ a:active, a:focus, input {
     overflow: hidden;
     background: #fff;
 }
+.sec-window{
+    background: #fff;
+}
+.m-window{
+    width: 1190px;
+    padding: 60px 10px 0 10px;
+    margin: 0 auto;
+}
+.m-window .tit{
+    color: #0c1012;
+    font:400 38px/45px "Microsoft YaHei";
+}
+.m-window .m-logo{
+    margin: 90px 50px 0 0;
+}
 
+.mod-window{
+    width: 705px;
+    margin: 30px 0 50px 0;
+}
 .mod-window .tit{
     color: #0088d3;
     font:32px/40px "Roboto";
+    position: relative;
 
 }
 .mod-window .tit:before{
@@ -286,9 +286,13 @@ a:active, a:focus, input {
     height: 3px;
     background-color: #00b4fa;
     display: block;
+    position: absolute;
+    top: -10px;
+    left: 0;
 }
 .mod-window .txt{
     color: #000;
     font:18px/28px "Microsoft YaHei";
     text-indent: 35px;
+    margin-top: 20px;
 }
