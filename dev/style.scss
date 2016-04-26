@@ -4,6 +4,7 @@ $designWidth : 1180;
   @return $px*320/$designWidth/20 + rem;
 }
 
+@import "iconrem";
 /*移动端*/
 @media (max-width: 767px) {
   body {
@@ -13,37 +14,136 @@ $designWidth : 1180;
     width: 100%;
     background-repeat: repeat-y !important;
   }
-  .mod-nav .m-nav {
-    width: 100%;
-  }
-  .nav-list {
+  .mod-nav {
     display: none;
   }
-  .mod-banner {
-    padding-top: 88px;
-    height: 823px;
+  .wap-nav{
     position: relative;
-    overflow: hidden;
-    min-width: 320px;
+    width: 100%;
+    display: block;
+    height: px(898);
+    background-color: #3f3a39;
   }
-  .mod-banner li {
-    float: left;
-    *display: inline;
+  .wap-nav .logo{
+    width: px(664);
+    display: block;
+    margin: 0 auto 0;
+    padding: px(293) 0 px(150) 0;
+  }
+  .wap-nav .logo img{
+    width: px(664);
+    height: auto;
+  }
+  .nav-btn,.nav-wrap .nav-hd h3{
+    background: url("../images/nav-btn.png") no-repeat;
+    width: px(144);
+    height: px(90);
+    display: block;
+    margin: 0 auto;
+    background-size: cover;
+    color: #ffffff;
+    font-size: px(41);
+    font-family: "Myriad Pro";
+    padding-left: px(110);
+    line-height: px(106);
+  }
+  .nav-wrap{
+    height: px(1920);
+    background-color: #2e2e2e;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  .nav-wrap .nav-hd{
+   padding: px(30) 0;
+    width: 100%;
+    border-bottom: 2px solid #1c1e1e;
+  }
+  .nav-wrap .nav-hd h3{
+    margin:0;
+  }
+  .nav-wrap .nav-bd li{
+    border-bottom: 2px solid #1c1e1e;
+    height: px(140);
+    padding: 0 px(46);
+  }
+  .nav-wrap .nav-bd li a{
+    display: block;
+    line-height: px(140);
     position: relative;
+  }
+  .nav-wrap .nav-bd li a:active{
+    text-decoration: none;
+  }
+  .nav-wrap .nav-bd li h3{
+    font-size: px(42);
+    color: #ffffff;
+    font-weight: 100;
+    font-family: "Myriad Pro";
+  }
+  .mod-banner {
+    padding-top: 0;
+    height: px(953);
+    min-width: px(320);
   }
   .mod-banner .b-bg1, .mod-banner .b-bg2, .mod-banner .b-bg3 {
     width: 100%;
     height: 100%;
     background-size: cover !important;
   }
-  .mod-banner .b-bg1 {
-    background: url("../images/bg1.jpg") no-repeat center;
-  }
   .mod-banner .b-content {
     width: 100%;
-    height: 958px;
+    height: px(953);
     overflow: hidden;
-    position: relative;
+  }
+  .mod-banner .b-bg1 h2, .mod-banner .b-bg1 h3,.mod-banner .b-bg3 h2, .mod-banner .b-bg3 h3 {
+    font-size: px(75);
+    padding-top: px(400);
+  }
+  .mod-banner .b-bg1 h3,.mod-banner .b-bg3 h3{
+    line-height: px(110);
+    padding: 0;
+  }
+  .mod-banner .b-bg1 .line {
+    width: px(754);
+    height: 2px;
+  }
+  .mod-banner .b-bg3 .line {
+    width: px(1000);
+    height: 2px;
+  }
+  .mod-banner .control {
+    position: absolute;
+    bottom: px(66);
+    left: 50%;
+    margin-left: px(-60);
+  }
+  .mod-banner .control li {
+    width: px(24);
+    height: px(10);
+    margin-left: px(12);
+  }
+  .mod-banner .read-more {
+    font-size: px(34);
+    width: px(242);
+    height: px(78);
+    line-height: px(78);
+    position: absolute;
+    bottom: px(148);
+    left: 50%;
+    margin-left: px(-121);
+  }
+  .mod-banner .b-bg2 a {
+    width: px(650);
+    height: px(97);
+    top: px(400);
+    margin-left: px(-534);
+  }
+  .mod-banner .b-bg2 h2 {
+    line-height: px(97);
+    font-size: px(56);
   }
   .mod-box .title {
     width: px(291);
@@ -206,6 +306,7 @@ $designWidth : 1180;
   .m-case .bd {
     width: 100%;
     margin-top: px(114);
+    overflow: hidden;
   }
   .m-case .bd ul {
     padding: 0 px(175);
@@ -242,7 +343,7 @@ $designWidth : 1180;
     height: px(86);
     margin: px(72) auto;
   }
-  .m-case .wf .txt img{
+  .m-case .wf .txt img {
     height: px(122);
     margin: px(70) auto;
   }
@@ -255,12 +356,16 @@ $designWidth : 1180;
     font-size: px(30);
     line-height: px(50);
   }
-  .m-partner .bd li{
+  .m-partner .wrap {
+    height: px(690);
+    padding-top: px(105);
+  }
+  .m-partner .bd li {
     width: 33.333%;
-    margin: 0 0 px(30) 0;
+    margin: 0 0 px(40) 0;
     height: px(110);
   }
-  .m-partner .bd li a{
+  .m-partner .bd li a {
     margin: 0 auto;
   }
   .m-partner .i-amaz {
@@ -271,10 +376,77 @@ $designWidth : 1180;
     width: px(260);
     height: px(86);
   }
-  .m-partner .i-lovoo {
+  .m-partner li a.i-lovoo {
     width: px(290);
     height: px(64);
     margin-top: px(22);
-
   }
+  .m-contact .wrap {
+    height: px(455);
+    padding-top: px(151);
+  }
+  .m-partner .bd{
+    margin-top: px(83);
+    padding: 0 px(100);
+  }
+  .m-partner .i-wf{
+    width: px(88);
+    height: px(88);
+  }
+  .m-partner .i-logo5{
+    width: px(96);
+    height: px(98);
+  }
+  .m-partner .i-logo6{
+    width: px(98);
+    height: px(102);
+  }
+  .m-partner .i-b{
+    width: px(94);
+    height: px(94);
+  }
+  .m-partner .ask{
+    width:px(122);
+    height: px(92);
+  }
+  .m-partner .i-logo9{
+    width: px(96);
+    height: px(98);
+  }
+  .m-contact .bd {
+    margin-top: px(98);
+    padding: 0 px(170);
+  }
+  .m-contact .bd p {
+    font-size: px(30);
+    line-height: px(50);
+  }
+}
+@media (max-width: 320px){
+  .m-connect .b-txt{
+    max-height: px(400);
+  }
+  .m-connect .wrap {
+    height: px(2900);
+  }
+  .m-window .wrap {
+    height: px(2410);
+  }
+}
+
+.nav-wrap .close{
+  @extend %spritesheet;
+  @include i_close;
+  position: absolute;
+  display: inline-block;
+  top:px(60);
+  right: px(42);
+}
+.nav-wrap .i-more{
+  @extend %spritesheet;
+  @include i_more;
+  position: absolute;
+  display: inline-block;
+  top:px(46);
+  right: 0;
 }

@@ -201,6 +201,9 @@ a:active, a:focus, input {
 }
 /*=================主体===================*/
 /*顶部导航栏*/
+.wap-nav{
+    display: none;
+}
 .mod-nav {
     position: fixed;
     z-index: 10;
@@ -631,7 +634,7 @@ a:active, a:focus, input {
     width: 188px;
 }
 .m-team .control li a{
-    background-image: url("../images/icon.png");
+    background-image: url("../images/i.png");
     width: 29px;
     height: 29px;
     margin: 0 9px;
@@ -808,6 +811,10 @@ a:active, a:focus, input {
     -webkit-animation: fadeIn 2s ease both;
     animation: fadeIn 2s ease both;
 }
+.pt-page-moveFromBottomFade {
+    -webkit-animation: moveFromBottomFade 2s ease both;
+    animation: moveFromBottomFade 2s ease both;
+}
 @-webkit-keyframes moveFromLeftFade {
     from { opacity: 0; -webkit-transform: translateX(-100%); }
 }
@@ -818,4 +825,8 @@ a:active, a:focus, input {
     from { opacity: 0;}
     to{ opacity: 1;}
 }
+@keyframes moveFromBottomFade {
+    from { opacity: 0.3; -webkit-transform: translateY(100%); transform: translateY(100%); }
+}
+
 

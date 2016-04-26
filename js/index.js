@@ -6,7 +6,7 @@ $(function(){
         effect: 'slide3d',
         animateTime: 1000,
         stay: 3500,
-        autoPlay: false,
+        autoPlay: true,
         merge: true
     });
 
@@ -18,6 +18,7 @@ $(function(){
     });
 
     /*动画*/
+    if($(window).width()>767){
 $(".case-list,.m-about .bd-txt").hover(function(){
     $(this).find(".list-info").addClass("act").stop().animate({"opacity":1},700);
         $(this).find("a").addClass("act");
@@ -27,8 +28,19 @@ $(".case-list,.m-about .bd-txt").hover(function(){
         $(this).find("a").removeClass("act");
     }
 );
+    }
     var _index=$("#j-banner .control li.current").index();
     $("#banner-list li").eq(_index).addClass("animate").siblings().removeClass("animate");
+
+    /*分屏*/
+    var _wight=-window.screen.width;
+    $("#wap-list").css("left",_wight);
+    $("#nav-btn").on("click",function(){
+        $("#wap-list").show().animate({"left":0},400);
+    });
+    $("#nav-close,#wap-list li a").on("click",function(){
+        $("#wap-list").animate({"left":_wight},400);
+    });
 
 /*定位*/
     var pos0 = $(".m-about").offset().top;
@@ -57,13 +69,20 @@ $(".case-list,.m-about .bd-txt").hover(function(){
         }else if($this_top>pos5&&$this_top<=pos6){
             $(".nav-list li").eq(6).addClass('cur').siblings().removeClass('cur');
             if($this_top>=pos5){
+                if($(window).width()<=767){
+                    for(var i=0;i<9;i++){
+                        $(".m-partner li").eq(i).addClass("pt-page-moveFromBottomFade")
+                    }
+                }else {
                 for(var i=0;i<3;i++){
                     $(".m-partner li").eq(i).addClass("pt-page-moveFromLeftFade")
                 }
                 $(".m-partner li").eq(3).addClass("pt-page-fadeIn");
                 for(var i=4;i<9;i++){
                     $(".m-partner li").eq(i).addClass("pt-page-moveFromRightFade")
+                   }
                 }
+
             }
         }else if($this_top>pos6){
             $(".nav-list li").eq(7).addClass('cur').siblings().removeClass('cur')
@@ -71,25 +90,27 @@ $(".case-list,.m-about .bd-txt").hover(function(){
 
     });
 
-    locate("#j-step1","#j-banner");
-    locate("#j-step2",".m-about");
-    locate("#j-step3",".m-connect");
-    locate("#j-step4",".m-window");
-    locate("#j-step5",".m-team");
-    locate("#j-step6",".m-case");
-    locate("#j-step7",".m-partner");
-    locate("#j-step8",".m-contact");
+    locate(".j-step1","#j-banner");
+    locate(".j-step2",".m-about");
+    locate(".j-step3",".m-connect");
+    locate(".j-step4",".m-window");
+    locate(".j-step5",".m-team");
+    locate(".j-step6",".m-case");
+    locate(".j-step7",".m-partner");
+    locate(".j-step8",".m-contact");
 
     function locate(item,div){
         $(item).bind("click",function(){
-            ot = $(div).offset().top-88;
+            if($(window).width()<=767) {
+                ot = $(div).offset().top - 88;
+            }else{
+                ot = $(div).offset().top - 1920;
+            }
             if($.browser.webkit){
-                $("body").stop().animate({scrollTop:ot},500);
-                console.log(ot)
+                $("body").stop().animate({"scrollTop":ot},500);
             }
             else{
-                $("html,body").stop().animate({scrollTop:ot},500);
-                console.log(ot)
+                $(document.documentElement || document.body).stop().animate({"scrollTop":ot},500);
             }
         });
     }
