@@ -101,11 +101,7 @@ $(".case-list,.m-about .bd-txt").hover(function(){
 
     function locate(item,div){
         $(item).bind("click",function(){
-            if($(window).width()<=767) {
                 ot = $(div).offset().top - 88;
-            }else{
-                ot = $(div).offset().top - 1920;
-            }
             if($.browser.webkit){
                 $("body").stop().animate({"scrollTop":ot},500);
             }

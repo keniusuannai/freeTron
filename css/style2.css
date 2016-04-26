@@ -231,7 +231,7 @@ a:active, a:focus, input {
 }
 
 /*banner模块*/
-.mod-banner{
+.ins-banner{
     width: 100%;
     min-width: 1000px;
     height: 307px;
@@ -257,30 +257,30 @@ a:active, a:focus, input {
 .sec-window{
     background: #fff;
 }
-.m-window{
+.m-wd{
     width: 1190px;
     padding: 60px 10px 0 10px;
     margin: 0 auto;
 }
-.m-window .tit{
+.m-wd .tit{
     color: #0c1012;
     font:400 38px/45px "Microsoft YaHei";
 }
-.m-window .m-logo{
+.m-wd .m-logo{
     margin: 90px 50px 0 0;
 }
 
-.mod-window{
+.window-in{
     width: 705px;
     margin: 30px 0 50px 0;
 }
-.mod-window .tit{
+.window-in .tit{
     color: #0088d3;
     font:32px/40px "Roboto";
     position: relative;
 
 }
-.mod-window .tit:before{
+.window-in .tit:before{
     content: '';
     width: 56px;
     height: 3px;
@@ -290,7 +290,7 @@ a:active, a:focus, input {
     top: -10px;
     left: 0;
 }
-.mod-window .txt{
+.window-in .txt{
     color: #000;
     font:18px/28px "Microsoft YaHei";
     text-indent: 35px;
