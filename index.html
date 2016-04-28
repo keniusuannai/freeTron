@@ -8,53 +8,6 @@
     <meta name="format-detection" content="telephone=no">
     <title>主页</title>
     <link rel="stylesheet" href="css/style.css"/>
-
-    <script>
-        (function (window, document) {
-            (function () {
-                var viewportEl = document.querySelector('meta[name="viewport"]'), hotcssEl = document.querySelector('meta[name="hotcss"]'), dpr = window.devicePixelRatio || 1;
-                if (hotcssEl) {
-                    var hotcssCon = hotcssEl.getAttribute("content");
-                    if (hotcssCon) {
-                        var initialDpr = hotcssCon.match(/initial\-dpr=([\d\.]+)/);
-                        if (initialDpr) {
-                            dpr = parseFloat(initialDpr[1])
-                        }
-                    }
-                }
-                var scale = 1, content = "width=device-width, initial-scale=" + scale + ", minimum-scale=" + scale + ", maximum-scale=" + scale + ", user-scalable=no";
-                if (viewportEl) {
-                    viewportEl.setAttribute("content", content)
-                } else {
-                    viewportEl = document.createElement("meta");
-                    viewportEl.setAttribute("name", "viewport");
-                    viewportEl.setAttribute("content", content);
-                    document.head.appendChild(viewportEl)
-                }
-            })();
-            var hotcss = {};
-            hotcss.px2rem = function (px, designWidth) {
-                if (!designWidth) {
-                    designWidth = parseInt(hotcss.designWidth, 10)
-                }
-                return parseInt(px, 10) * 320 / designWidth / 20
-            };
-            hotcss.mresize = function () {
-                var innerWidth = window.innerWidth;
-                if (!innerWidth) {
-                    return false
-                }
-                document.documentElement.style.fontSize = (innerWidth * 20 / 320) + "px"
-            };
-            hotcss.mresize();
-            window.addEventListener("resize", hotcss.mresize, false);
-            window.addEventListener("load", hotcss.mresize, false);
-            setTimeout(function () {
-                hotcss.mresize()
-            }, 300);
-            window.hotcss = hotcss
-        })(window, document);
-    </script>
 </head>
 <body>
     <!--顶部导航栏-->
@@ -159,9 +112,11 @@
             <ul class="clearfix" id="banner-list">
                 <li class="b-bg1">
                     <div class="b-content">
-                        <h2>Connect</h2>
+                        <div class="ani-h2">
+                            <h2>Connect</h2>
+                        </div>
                         <span class="line"></span>
-                        <h3>We Value Your Business</h3>
+                        <h3 >We Value Your Business</h3>
                     </div>
                     <a href="#" target="_blank" class="read-more">Read more</a>
                 </li>
@@ -350,7 +305,7 @@
         <div class="wrap">
             <a href="#" target="_blank" class="title">Case Study</a>
             <div class="bd">
-                <ul class="clearfix">
+                <ul class="clearfix" id="slide">
                     <li class="lovoo">
                         <a href="javascript:" class="case-list">
                             <img src="images/logo/logo1.png" class="logo">
@@ -379,7 +334,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="ask">
+                   <li class="ask">
                         <a href="javascript:" class="case-list">
                             <img src="images/logo/logo3.png" class="logo">
                             <div class="list-info" >
@@ -393,7 +348,23 @@
                             </div>
                         </a>
                     </li>
+                    <li class="ask hidden">
+                    <a href="javascript:" class="case-list">
+                    <img src="images/logo/logo3.png" class="logo">
+                    <div class="list-info" >
+                                <img src="images/tmp/2.jpg">
+                                <div class="txt">
+                                    <img src="images/logo/logo3.png">
+                                    <p>ASK is for chatting and getting to
+                                        know people. Discover people near
+                                        you on the Radar……</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
+                <a class="i-left hidden" id="i-left" href="javascript:"></a>
+                <a class="i-right hidden" id="i-right" href="javascript:"></a>
             </div>
         </div>
     </div>
@@ -443,9 +414,56 @@
         </div>
     </div>
     <!--内容-->
+
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/banner.js"></script>
-    <script src="js/slide.js"></script>
+<script src="js/slide.js"></script>
 <script src="js/index.js"></script>
+<script>
+        (function (window, document) {
+            (function () {
+                var viewportEl = document.querySelector('meta[name="viewport"]'), hotcssEl = document.querySelector('meta[name="hotcss"]'), dpr = window.devicePixelRatio || 1;
+                if (hotcssEl) {
+                    var hotcssCon = hotcssEl.getAttribute("content");
+                    if (hotcssCon) {
+                        var initialDpr = hotcssCon.match(/initial\-dpr=([\d\.]+)/);
+                        if (initialDpr) {
+                            dpr = parseFloat(initialDpr[1])
+                        }
+                    }
+                }
+                var scale = 1, content = "width=device-width, initial-scale=" + scale + ", minimum-scale=" + scale + ", maximum-scale=" + scale + ", user-scalable=no";
+                if (viewportEl) {
+                    viewportEl.setAttribute("content", content)
+                } else {
+                    viewportEl = document.createElement("meta");
+                    viewportEl.setAttribute("name", "viewport");
+                    viewportEl.setAttribute("content", content);
+                    document.head.appendChild(viewportEl)
+                }
+            })();
+            var hotcss = {};
+            hotcss.px2rem = function (px, designWidth) {
+                if (!designWidth) {
+                    designWidth = parseInt(hotcss.designWidth, 10)
+                }
+                return parseInt(px, 10) * 320 / designWidth / 20
+            };
+            hotcss.mresize = function () {
+                var innerWidth = window.innerWidth;
+                if (!innerWidth) {
+                    return false
+                }
+                document.documentElement.style.fontSize = (innerWidth * 20 / 320) + "px"
+            };
+            hotcss.mresize();
+            window.addEventListener("resize", hotcss.mresize, false);
+            window.addEventListener("load", hotcss.mresize, false);
+            setTimeout(function () {
+                hotcss.mresize()
+            }, 300);
+            window.hotcss = hotcss
+        })(window, document);
+    </script>
 </body>
 </html>

@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>内容页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
@@ -40,18 +43,81 @@
         </ul>
     </div>
 </div>
-<!--/顶部导航栏-->
+<div class="wap-nav inside-nav">
+    <a class="logo" href="">
+        <img src="images/logo.png" width="199" height="43" alt="freetron"/>
+    </a>
+    <a class="nav-btn" href="javascript:" id="nav-btn">MENU</a>
+    <div class="nav-wrap " id="wap-list">
+        <div class="nav-hd">
+            <h3>MENU</h3>
+            <i class="close" id="nav-close"></i>
+        </div>
+        <ul class="nav-bd">
+            <li>
+                <a href="index.html" class="j-step1">
+                    <h3>Home</h3>
+                    <i class="i-more"></i>
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="j-step2">
+                    <h3>ABOUT</h3>
+                    <i class="i-more"></i>
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="j-step3">
+                    <h3>CONNECT</h3>
+                    <i class="i-more"></i>
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="j-step4">
+                    <h3>WINDOW</h3>
+                    <i class="i-more"></i>
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="j-step5">
+                    <h3>TEAM</h3>
+                    <i class="i-more"></i>
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="j-step6">
+                    <h3>CASE STUDY</h3>
+                    <i class="i-more"></i>
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="j-step7">
+                    <h3>PARTNER</h3>
+                    <i class="i-more"></i>
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="j-step8">
+                    <h3>CONTACT</h3>
+                    <i class="i-more"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--顶部导航栏-->
+
 <!--banner-->
 <div class="ins-banner">
     <div class="banner-in">
-    <div class="m-banner">
-        <h2 class="tit">Window</h2>
-        <div class="sprite"></div>
-        <h2 class="tit fw">Your New Chapter to the world</h2>
-    </div>
+        <div class="wrap">
+            <h2>Window</h2>
+            <span class="line"></span>
+            <h3>Your New Chapter to the World</h3>
+        </div>
     </div>
 </div>
-<!--/banner-->
+<!--banner-->
 <!--window模块-->
 <div class="sec-window">
     <div class="m-wd clearfix">
@@ -81,7 +147,7 @@
     </div>
 </div>
 <!--/window模块-->
-<div class="mod-box m-contact">
+<div class="mod-box m-contact inside-con">
     <div class="wrap">
         <a href="#" target="_blank" class="title">Contact</a>
         <div class="bd">
@@ -90,5 +156,55 @@
         </div>
     </div>
 </div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/banner.js"></script>
+<script src="js/slide.js"></script>
+<script src="js/index.js"></script>
+<script>
+    (function (window, document) {
+        (function () {
+            var viewportEl = document.querySelector('meta[name="viewport"]'), hotcssEl = document.querySelector('meta[name="hotcss"]'), dpr = window.devicePixelRatio || 1;
+            if (hotcssEl) {
+                var hotcssCon = hotcssEl.getAttribute("content");
+                if (hotcssCon) {
+                    var initialDpr = hotcssCon.match(/initial\-dpr=([\d\.]+)/);
+                    if (initialDpr) {
+                        dpr = parseFloat(initialDpr[1])
+                    }
+                }
+            }
+            var scale = 1, content = "width=device-width, initial-scale=" + scale + ", minimum-scale=" + scale + ", maximum-scale=" + scale + ", user-scalable=no";
+            if (viewportEl) {
+                viewportEl.setAttribute("content", content)
+            } else {
+                viewportEl = document.createElement("meta");
+                viewportEl.setAttribute("name", "viewport");
+                viewportEl.setAttribute("content", content);
+                document.head.appendChild(viewportEl)
+            }
+        })();
+        var hotcss = {};
+        hotcss.px2rem = function (px, designWidth) {
+            if (!designWidth) {
+                designWidth = parseInt(hotcss.designWidth, 10)
+            }
+            return parseInt(px, 10) * 320 / designWidth / 20
+        };
+        hotcss.mresize = function () {
+            var innerWidth = window.innerWidth;
+            if (!innerWidth) {
+                return false
+            }
+            document.documentElement.style.fontSize = (innerWidth * 20 / 320) + "px"
+        };
+        hotcss.mresize();
+        window.addEventListener("resize", hotcss.mresize, false);
+        window.addEventListener("load", hotcss.mresize, false);
+        setTimeout(function () {
+            hotcss.mresize()
+        }, 300);
+        window.hotcss = hotcss
+    })(window, document);
+</script>
 </body>
 </html>

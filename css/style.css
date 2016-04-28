@@ -270,6 +270,9 @@ a:active, a:focus, input {
     overflow: hidden;
     position: relative;
 }
+.mod-banner .b-bg1 .ani-h2{
+    padding-top: 360px;
+}
 .mod-banner .b-bg1 h2,.mod-banner .b-bg1 h3{
     font-size: 60px;
     color: #ffffff;
@@ -277,10 +280,8 @@ a:active, a:focus, input {
     text-align: center;
     font-weight: 100;
     font-style: italic;
-    padding-top: 360px;
 }
 .mod-banner .b-bg1 h3{
-    padding-top: 0;
     line-height: 100px;
 }
 .mod-banner .b-bg1 .line{
@@ -396,6 +397,7 @@ a:active, a:focus, input {
 .m-case .wrap{ background:url(../images/bx6_2.jpg) no-repeat center 0;
     height: 726px;
     padding-top: 110px;
+    position: relative;
 }
 .m-partner{ background:url(../images/bx7_1.jpg) no-repeat center 0 #bcdcf7;}
 .m-partner .wrap{ background:url(../images/bx7_2.jpg) no-repeat center 0;
@@ -477,7 +479,7 @@ a:active, a:focus, input {
 }
 .m-connect .b-txt{
     width: 219px;
-    height: 206px;
+    height: 200px;
     overflow: hidden;
     margin: 22px auto 25px auto;
 
@@ -633,17 +635,16 @@ a:active, a:focus, input {
     background-image: url("../images/i_hover.png");
 }
 .m-case .bd{
-    width: 100%;
-    margin-top: 46px;
+    overflow: hidden;
+    margin: 46px 34px 0 34px;
 }
 .m-case .bd ul{
-    padding: 0 34px;
     margin-right: -10px;
 }
 .m-case .bd li{
     float: left;
     width: 360px;
-    margin-right: 6px;
+    margin-right: 10px;
 }
 .m-case .bd li .case-list{
     position: relative;
@@ -700,6 +701,21 @@ a:active, a:focus, input {
     width: auto;
     height: 61px;
     margin: 35px auto;
+}
+.m-case .i-left,.m-case .i-right{
+    position: absolute;
+    top: 454px;
+    display: block;
+    width: 36px;
+    height: 36px;
+}
+.m-case .i-left{
+    left: -16px;
+    background: url("../images/i_left.png");
+}
+.m-case .i-right{
+    right: -14px;
+    background: url("../images/i_right.png");
 }
 .m-case .ask .txt img{
     width: auto;
@@ -798,24 +814,26 @@ a:active, a:focus, input {
 .banner-in{
     height: 307px;
     width: 100%;
-    background-size: cover;
+    background-size: cover !important;
     background: url(../images/ins_banner.jpg) no-repeat center;
 }
-.m-banner{
-    width: 940px;
-    margin: 0 auto;
-    padding: 140px 0 0 60px;
+.ins-banner h2{
+    padding-top: 130px;
 }
-.m-banner .tit{
-    font:400 35px/50px "simsun";
-    color: #fff;
+.ins-banner h2,.ins-banner h3{
+    font-size: 45px;
+    color: #ffffff;
+    line-height: 62px;
+    padding-left: 48px;
+    font-family:"Myriad Pro";
+    font-weight: 100;
 }
-.m-banner .sprite{
-    width: 585px;
-    height: 1px;
-    margin-left: -10px;
-    overflow: hidden;
-    background: #fff;
+.ins-banner .line{
+    width: 596px;
+    height: 2px;
+    display: block;
+    margin-left: 48px;
+    background-color: #ffffff;
 }
 .sec-window{
     background: #fff;
@@ -832,7 +850,6 @@ a:active, a:focus, input {
 .m-wd .m-logo{
     margin: 90px 50px 0 0;
 }
-
 .window-in{
     width: 705px;
     margin: 30px 0 50px 0;
@@ -859,6 +876,9 @@ a:active, a:focus, input {
     text-indent: 35px;
     margin-top: 20px;
 }
+.hidden{
+    display: block;
+}
 
 /*移动端*/
 .nav-wrap .close, .nav-wrap .i-more {
@@ -868,9 +888,8 @@ a:active, a:focus, input {
 }
 @media (max-width: 767px) {
     body {
-        min-width: 4.33898rem
+        min-width: 320px;
     }
-
     .wrap {
         width: 100%;
         background-repeat: repeat-y !important
@@ -1228,8 +1247,8 @@ a:active, a:focus, input {
 
     .m-case .bd {
         width: 100%;
-        margin-top: 1.54576rem;
-        overflow: hidden
+        margin: 1.54576rem 0 0 0;
+        overflow: hidden;
     }
 
     .m-case .bd ul {
@@ -1258,7 +1277,6 @@ a:active, a:focus, input {
         display: block;
         background-image: none;
         width: 100%;
-        height: auto;
         height: 15.17288rem
     }
 
@@ -1272,7 +1290,6 @@ a:active, a:focus, input {
         height: 1.1661rem;
         margin: 0.97627rem auto
     }
-
     .m-case .wf .txt img {
         height: 1.65424rem;
         margin: 0.94915rem auto
@@ -1282,7 +1299,6 @@ a:active, a:focus, input {
         height: 1.65424rem;
         margin: 0.94915rem auto
     }
-
     .m-case .txt p {
         padding: 0 2.0339rem;
         font-size: 0.40678rem;
@@ -1369,6 +1385,97 @@ a:active, a:focus, input {
         font-size: 0.40678rem;
         line-height: 0.67797rem
     }
+
+    /*内页*/
+    .inside-nav .nav-wrap {
+        height: 20.50169rem
+    }
+
+    .ins-banner {
+        padding-top: 0;
+        width: 100%;
+        min-width: 320px;
+        height: 8.32542rem
+    }
+
+    .banner-in {
+        height: 8.32542rem;
+        width: 100%
+    }
+
+    .ins-banner h2 {
+        padding-top: 3.38983rem
+    }
+
+    .ins-banner h2, .ins-banner h3 {
+        font-size: 1.01695rem;
+        line-height: 1.68136rem;
+        padding-left: 1.30169rem
+    }
+
+    .ins-banner .line {
+        width: 13.55932rem;
+        margin-left: 1.30169rem
+    }
+
+    .m-wd {
+        width: 100%;
+        padding: 1.35593rem 0 0 0;
+        margin: 0
+    }
+
+    .fl {
+        display: block;
+        float: none;
+        padding: 0 1.68475rem
+    }
+
+    .fr {
+        display: block;
+        float: none;
+        padding-bottom: 0.55254rem;
+    }
+
+    .m-wd .tit {
+        font: 100 1.03051rem/1.22034rem "Microsoft YaHei"
+    }
+
+    .m-wd .m-logo {
+        display: block;
+        margin: -0.35254rem auto 0 auto;
+        width: 10.71186rem;
+        height: auto;
+    }
+
+    .window-in {
+        width: 12.20339rem;
+        margin: 0.61017rem 0 0.94915rem 0
+    }
+
+    .window-in .tit {
+        font: 0.81356rem/0.81356rem "Myriad Pro";
+    }
+
+    .window-in .tit:before {
+        content: '';
+        width: 1.35593rem;
+        top: -0.27119rem
+    }
+
+    .window-in .txt {
+        font: 0.40678rem/0.81356rem "Microsoft YaHei";
+        text-indent: 0.94915rem;
+        margin-top: 0.27119rem
+    }
+    .inside-con .bd p{
+        text-align: left;
+    }
+    .inside-con .title{
+        margin-left:2.30508rem;
+    }
+    .hidden{
+        display: none;
+    }
 }
 
 @media (max-width: 320px) {
@@ -1384,7 +1491,6 @@ a:active, a:focus, input {
         height: 32.67797rem
     }
 }
-
 .nav-wrap .close {
     background-position: 0 0;
     width: 0.62373rem;
@@ -1418,22 +1524,53 @@ a:active, a:focus, input {
     -webkit-animation: fadeIn 2s ease both;
     animation: fadeIn 2s ease both;
 }
-.pt-page-moveFromBottomFade {
-    -webkit-animation: moveFromBottomFade 2s ease both;
-    animation: moveFromBottomFade 2s ease both;
+.pt-page-moveFromBottom {
+    -webkit-animation: moveFromBottom 1.5s ease both;
+    animation: moveFromBottom 1.5s ease both;
+}
+.pt-page-line{
+    -webkit-animation: widenLine 1s ease both;
+    animation: widenLine 1s ease both;
+}
+.pt-page-rotateUnfoldTop {
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-animation: rotateUnfoldTop 1.5s both ease;
+    animation: rotateUnfoldTop 1.5s both ease;
+}
+
+@-webkit-keyframes rotateUnfoldTop {
+    from { opacity: 0; -webkit-transform: translateY(-100%) rotateX(90deg); }
+}
+/*@keyframes widenLine {*/
+    /*from { width: 2% }*/
+    /*to{width: 60%}*/
+/*}*/
+@keyframes moveFromLeftFade {
+    from { opacity: 0; -webkit-transform: translateX(-100%); }
 }
 @-webkit-keyframes moveFromLeftFade {
     from { opacity: 0; -webkit-transform: translateX(-100%); }
 }
+@keyframes moveFromRightFade {
+    from { opacity: 0; -webkit-transform: translateX(100%); }
+}
 @-webkit-keyframes moveFromRightFade {
     from { opacity: 0; -webkit-transform: translateX(100%); }
+}
+@keyframes fadeIn {
+    from { opacity: 0;}
+    to{ opacity: 1;}
 }
 @-webkit-keyframes fadeIn {
     from { opacity: 0;}
     to{ opacity: 1;}
 }
-@keyframes moveFromBottomFade {
-    from { opacity: 0.3; -webkit-transform: translateY(100%); transform: translateY(100%); }
+@keyframes moveFromBottom {
+    from { opacity: 0; -webkit-transform: translateY(100%); transform: translateY(40%); }
+}
+@-webkit-keyframes moveFromBottom{
+    from { opacity: 0; -webkit-transform: translateY(100%); transform: translateY(40%); }
 }
 
 

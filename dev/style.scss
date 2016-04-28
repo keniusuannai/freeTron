@@ -4,7 +4,7 @@ $designWidth : 1180;
   @return $px*320/$designWidth/20 + rem;
 }
 
-@import "iconrem";
+//@import "iconrem";
 /*移动端*/
 @media (max-width: 767px) {
   body {
@@ -98,7 +98,7 @@ $designWidth : 1180;
     height: px(953);
     overflow: hidden;
   }
-  .mod-banner .b-bg1 h2, .mod-banner .b-bg1 h3,.mod-banner .b-bg3 h2, .mod-banner .b-bg3 h3 {
+  .mod-banner .b-bg1 h2, .mod-banner .b-bg1 h3,.mod-banner .b-bg3 h2, .mod-banner .b-bg3 h3{
     font-size: px(75);
     padding-top: px(400);
   }
@@ -331,7 +331,6 @@ $designWidth : 1180;
     display: block;
     background-image: none;
     width: 100%;
-    height: auto;
     height: px(1119);
   }
   .m-case .list-info img {
@@ -421,6 +420,78 @@ $designWidth : 1180;
     font-size: px(30);
     line-height: px(50);
   }
+  /*内页*/
+  .inside-nav .nav-wrap{
+    height: px(1512);
+  }
+  .ins-banner {
+    padding-top: 0;
+    width: 100%;
+    min-width: 320px;
+    height: px(614);
+  }
+  .banner-in {
+    height: px(614);
+    width: 100%;
+  }
+  .ins-banner h2{
+    padding-top: px(250);
+  }
+  .ins-banner h2,.ins-banner h3{
+    font-size: px(75);
+    line-height: px(124);
+    padding-left: px(96);
+  }
+  .ins-banner .line{
+    width: px(1000);
+    margin-left: px(96);
+  }
+
+  .m-wd{
+    width: 100%;
+    padding: px(100) 0 0 0;
+    margin: 0;
+  }
+  .fl{
+    display: block;
+    float: none;
+    padding: 0 px(80);
+  }
+  .fr{
+    display: block;
+    float: none;
+    padding-bottom: 20px;
+  }
+  .m-wd .tit{
+    font:100 px(76)/px(90) "Microsoft YaHei";
+  }
+  .m-wd .m-logo{
+    display: block;
+    margin: px(-26) auto 0 auto;
+    width: px(790);
+    height: auto;
+  }
+  .window-in{
+    width: px(900);
+    margin: px(45) auto px(70) auto;
+  }
+  .window-in .tit{
+    font:px(60)/px(60);
+    font-family: "Myriad Pro";
+  }
+  .window-in .tit:before{
+    content: '';
+    width: px(100);
+    top: px(-20);
+  }
+  .window-in .txt{
+    font:px(30)/px(60) "Microsoft YaHei";
+    text-indent: px(70);
+    margin-top: px(20);
+  }
+
+
+
 }
 @media (max-width: 320px){
   .m-connect .b-txt{
@@ -433,20 +504,21 @@ $designWidth : 1180;
     height: px(2410);
   }
 }
+//
+//.nav-wrap .close{
+//  @extend %spritesheet;
+//  @include i_close;
+//  position: absolute;
+//  display: inline-block;
+//  top:px(60);
+//  right: px(42);
+//}
+//.nav-wrap .i-more{
+//  @extend %spritesheet;
+//  @include i_more;
+//  position: absolute;
+//  display: inline-block;
+//  top:px(46);
+//  right: 0;
+//}
 
-.nav-wrap .close{
-  @extend %spritesheet;
-  @include i_close;
-  position: absolute;
-  display: inline-block;
-  top:px(60);
-  right: px(42);
-}
-.nav-wrap .i-more{
-  @extend %spritesheet;
-  @include i_more;
-  position: absolute;
-  display: inline-block;
-  top:px(46);
-  right: 0;
-}

@@ -17,8 +17,24 @@ $(function(){
         $(this).parent().addClass('cur').siblings().removeClass('cur');
     });
 
+
     /*动画*/
     if($(window).width()>767){
+        //slide切换
+        ue.marquee({
+            target : '#slide',
+            items : '#slide li',
+            prevbtn : "#i-left",
+            nextbtn : "#i-right",
+            speed : 300,
+            visiblenum : 1,
+            scrollnum : 1,
+            autoplay : false,
+            loop : 1,
+            mode : 1,
+            direction : 0
+        });
+
 $(".case-list,.m-about .bd-txt").hover(function(){
     $(this).find(".list-info").addClass("act").stop().animate({"opacity":1},700);
         $(this).find("a").addClass("act");
@@ -29,10 +45,21 @@ $(".case-list,.m-about .bd-txt").hover(function(){
     }
 );
     }
+
+
+    $("#banner-list li").eq(0).addClass("animate").siblings().removeClass("animate");
+    setInterval(ani,1000);
+
+    function ani(){
     var _index=$("#j-banner .control li.current").index();
     $("#banner-list li").eq(_index).addClass("animate").siblings().removeClass("animate");
+    }
+    var $ani=$(".animate");
+    $ani.find(".line").removeClass("pt-page-line").addClass("pt-page-line");
+   $ani.find("h2").removeClass("pt-page-moveFromBottom").addClass("pt-page-moveFromBottom");
+    $ani.find("h3").removeClass("pt-page-rotateUnfoldTop").addClass("pt-page-rotateUnfoldTop");
 
-    /*分屏*/
+    /*导航*/
     var _wight=-window.screen.width;
     $("#wap-list").css("left",_wight);
     $("#nav-btn").on("click",function(){
@@ -71,7 +98,7 @@ $(".case-list,.m-about .bd-txt").hover(function(){
             if($this_top>=pos5){
                 if($(window).width()<=767){
                     for(var i=0;i<9;i++){
-                        $(".m-partner li").eq(i).addClass("pt-page-moveFromBottomFade")
+                        $(".m-partner li").eq(i).addClass("pt-page-moveFromBottom")
                     }
                 }else {
                 for(var i=0;i<3;i++){
