@@ -162,10 +162,6 @@ td {
     zoom: 1; /* for IE6 IE7 */
 }
 
-.hidden {
-    display: none;
-}
-
 .fl, .fr {
     display: inline;
     zoom: 1;
@@ -251,8 +247,6 @@ a:active, a:focus, input {
     position: relative;
 }
 .mod-banner .b-bg1,.mod-banner .b-bg2,.mod-banner .b-bg3{
-    width: 100%;
-    height: 100%;
     background-size: cover !important;
 }
 .mod-banner .b-bg1{
@@ -265,7 +259,6 @@ a:active, a:focus, input {
     background: url("../images/bg3.jpg") no-repeat center 0;
 }
 .mod-banner .b-content{
-    width:100%;
     height: 823px;
     overflow: hidden;
     position: relative;
@@ -312,6 +305,9 @@ a:active, a:focus, input {
     background-color: rgba(38,186,239,1);
     text-decoration: none;
 }
+.mod-banner .b-bg3 .ani-h2{
+    padding-top: 380px;
+}
 .mod-banner .b-bg3 h2,.mod-banner .b-bg3 h3{
     font-size: 53px;
     color: #ffffff;
@@ -319,7 +315,6 @@ a:active, a:focus, input {
     text-align: center;
     font-weight: 100;
     font-style: italic;
-    padding-top: 422px;
 }
 .mod-banner .b-bg3 h3{
     padding: 0;
@@ -366,8 +361,9 @@ a:active, a:focus, input {
     text-indent: -999px;
     overflow: hidden;
     margin-left: 13px;
+    cursor: pointer;
 }
-.mod-banner .control li.current{
+.mod-banner .control li.cur{
     background-color: #008cd7;
 }
 /*内容*/
@@ -707,7 +703,7 @@ a:active, a:focus, input {
     top: 454px;
     display: block;
     width: 36px;
-    height: 36px;
+    height: 35px;
 }
 .m-case .i-left{
     left: -16px;
@@ -876,9 +872,7 @@ a:active, a:focus, input {
     text-indent: 35px;
     margin-top: 20px;
 }
-.hidden{
-    display: block;
-}
+
 
 /*移动端*/
 .nav-wrap .close, .nav-wrap .i-more {
@@ -892,7 +886,7 @@ a:active, a:focus, input {
     }
     .wrap {
         width: 100%;
-        background-repeat: repeat-y !important
+        background-size: cover !important;
     }
 
     .mod-nav {
@@ -985,20 +979,18 @@ a:active, a:focus, input {
     }
 
     .mod-banner .b-bg1, .mod-banner .b-bg2, .mod-banner .b-bg3 {
-        width: 100%;
-        height: 100%;
         background-size: cover !important
     }
 
     .mod-banner .b-content {
-        width: 100%;
         height: 12.92203rem;
         overflow: hidden
     }
-
+    .mod-banner .b-bg1 .ani-h2,.mod-banner .b-bg3 .ani-h2{
+        padding-top: 5.42373rem;
+    }
     .mod-banner .b-bg1 h2, .mod-banner .b-bg1 h3, .mod-banner .b-bg3 h2, .mod-banner .b-bg3 h3 {
         font-size: 1.01695rem;
-        padding-top: 5.42373rem
     }
 
     .mod-banner .b-bg1 h3, .mod-banner .b-bg3 h3 {
@@ -1115,7 +1107,7 @@ a:active, a:focus, input {
 
     .m-connect .b-txt {
         height: auto;
-        max-height: 4.88136rem;
+        max-height: 5.2rem;
         width: 9.11186rem;
         margin: 0.37966rem auto 0.81356rem auto
     }
@@ -1473,7 +1465,7 @@ a:active, a:focus, input {
     .inside-con .title{
         margin-left:2.30508rem;
     }
-    .hidden{
+    .m-case .i-left, .m-case .i-right,.hidden{
         display: none;
     }
 }
@@ -1525,8 +1517,8 @@ a:active, a:focus, input {
     animation: fadeIn 2s ease both;
 }
 .pt-page-moveFromBottom {
-    -webkit-animation: moveFromBottom 1.5s ease both;
-    animation: moveFromBottom 1.5s ease both;
+    -webkit-animation: moveFromBottom 1.2s ease both;
+    animation: moveFromBottom 1.2s ease both;
 }
 .pt-page-line{
     -webkit-animation: widenLine 1s ease both;
@@ -1535,17 +1527,46 @@ a:active, a:focus, input {
 .pt-page-rotateUnfoldTop {
     -webkit-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
-    -webkit-animation: rotateUnfoldTop 1.5s both ease;
-    animation: rotateUnfoldTop 1.5s both ease;
+    -webkit-animation: rotateUnfoldTop 1.2s both ease;
+    animation: rotateUnfoldTop 1.2s both ease;
 }
-
+.pt-page-rotatePullTop {
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-animation: rotatePullTop 1.5s both ease;
+    animation: rotatePullTop 1.5s both ease;
+}
+.pt-page-rotateRoomLeftIn {
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+    -webkit-animation: rotateRoomLeftIn 1s both ease;
+    animation: rotateRoomLeftIn 1s both ease;
+}
+.pt-page-scaleUp{
+    -moz-animation: scaleUp 1.2s ease both;
+    -webkit-animation: scaleUp 1.2s ease both;
+    -ms-animation: scaleUp 1.2s ease both;
+    animation: scaleUp 1.2s ease both;
+}
+.pt-page-rotateFall {
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-animation: rotateFall 1.2s both ease-in;
+    animation: rotateFall 1.2s both ease-in;
+}
+@-webkit-keyframes rotatePullTop {
+    from { opacity: 0; -webkit-transform: rotateX(-90deg); }
+}
+@keyframes rotatePullTop {
+    from { opacity: 0; -webkit-transform: rotateX(-90deg); transform: rotateX(-90deg); }
+}
 @-webkit-keyframes rotateUnfoldTop {
     from { opacity: 0; -webkit-transform: translateY(-100%) rotateX(90deg); }
 }
-/*@keyframes widenLine {*/
-    /*from { width: 2% }*/
-    /*to{width: 60%}*/
-/*}*/
+@keyframes widenLine {
+    from { width: 2% }
+    to{width: 60%}
+}
 @keyframes moveFromLeftFade {
     from { opacity: 0; -webkit-transform: translateX(-100%); }
 }
@@ -1572,5 +1593,43 @@ a:active, a:focus, input {
 @-webkit-keyframes moveFromBottom{
     from { opacity: 0; -webkit-transform: translateY(100%); transform: translateY(40%); }
 }
+@keyframes rotatePushBottom {
+    from { }
+    to { opacity: 0; -webkit-transform: rotateX(90deg); transform: rotateX(90deg); }
+}
+@-webkit-keyframes rotateRoomLeftIn {
+    from { opacity: .3; -webkit-transform: translateX(-100%) rotateY(90deg); }
+}
+@keyframes scaleUp {
+    from { opacity: 0; -webkit-transform: scale(0.8); transform: scale(0.8); }
+}
+@-webkit-keyframes rotateFall {
+    0% { -webkit-transform: rotateZ(0deg); opacity: 0}
+    20% { -webkit-transform: rotateZ(10deg); -webkit-animation-timing-function: ease-out; }
+    40% { -webkit-transform: rotateZ(17deg); }
+    60% { -webkit-transform: rotateZ(10deg); }
+    100% { -webkit-transform: translateY(100%) rotateZ(0deg); }
+}
 
-
+.pt-page-rotateCarouselLeftIn {
+     -webkit-transform-origin: 0% 50%;
+     transform-origin: 0% 50%;
+     -webkit-animation: rotateCarouselLeftIn 1s both ease;
+     animation: rotateCarouselLeftIn 1s both ease;
+ }
+@-webkit-keyframes rotateCarouselLeftIn {
+    from { opacity: 0; -webkit-transform: translateZ(-500px) rotateY(-90deg); }
+}
+.pt-page-rotateCarouselRightIn {
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-animation: rotateCarouselRightIn 1s both ease;
+    animation: rotateCarouselRightIn 1s both ease;
+}
+@-webkit-keyframes rotateCarouselRightIn {
+    from { opacity: 0; -webkit-transform: translateZ(-500px) rotateY(-90deg); }
+}
+.pt-page-delay500 {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
